@@ -9,6 +9,7 @@ xdotool,Useful tool to automate keypresses
 xwallpaper,Make your desktop look nice
 xcompmgr,Enables transparency (picom alternative)
 libnotify,Enables notifications to appear
+brightnessctl,Adjusts screen brightness
 dunst,A specific notification daemon for libnotify
 pipewire,Main program for sound and volume
 pipewire-pulse,Compatibility for pulse applications
