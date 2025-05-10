@@ -40,17 +40,13 @@ getuserandpass() {
 	read -r name
 	echo "Next, your password for this account."
 	printf "Password: "
-	read -r pass1
-	echo "Retype password."
-	printf "Re-password: "
-	read -r pass2
-	! [ "$pass1" = "$pass2" ] && error "Passwords do not match."
+	read -r pass
 }
 
 adduserandpass() {
 	useradd -m -g wheel "$name"
-	echo "$name:$pass1" | chpasswd
-	unset pass1 pass2
+	echo "$name:$pass" | chpasswd
+	unset pass
 	srcdir="/home/$name/.local/src"
 	echo "%wheel ALL=(ALL:ALL) NOPASSWD:ALL" > /etc/sudoers.d/temp
 	sudo -u "$name" mkdir -p "$srcdir"
@@ -75,7 +71,7 @@ installconfig() {
 	echo "Installing configuration files..."
 	sudo -u "$name" git -C "$srcdir" clone "$dotfilesrepo" >/dev/null 2>&1
 	# Install dwm and other suckless software.
-	for i in "dwm st dmenu dwmblocks"; do
+	for i in $(echo "dwm st dmenu dwmblocks"); do
 		sudo -u "$name" git -C "$srcdir" clone "https://github.com/x1nigo/$i.git" >/dev/null 2>&1
 		cd "$srcdir"/"$i" && make clean install >/dev/null 2>&1
 	done
@@ -83,7 +79,9 @@ installconfig() {
 	# Transfer ".local" and ".config" files to their respective locations.
 	shopt -s dotglob
 	sudo -u "$name" mv -f .local/* /home/$name/.local/
-	sudo -u "$name" mv -f .config/* /home/$name/.config/
+	[ -d /home/$name/.config ] && {
+		sudo -u "$name" mv -f .config/* /home/$name/.config/
+	} || sudo -u "$name" mv -f .config /home/$name/
 	chmod -R +x /home/$name/.local/bin
 	# Enable tap to click and natural scrolling.
 	[ ! -f /etc/X11/xorg.conf.d/40-libinput.conf ] && printf 'Section "InputClass"

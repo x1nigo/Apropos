@@ -26,3 +26,5 @@ polkit,Authentication tool for permissions
 fzf,Another tool for searching
 bc,A calculator
 fff,The fast fucking file manager
+zsh,The Z Shell (more options than bash)
+zsh-syntax-highlighting,As its name suggests
