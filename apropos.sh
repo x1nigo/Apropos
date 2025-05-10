@@ -65,12 +65,11 @@ installconfig() {
 	# Install dwm and other suckless software.
 	for i in dwm st dmenu dwmblocks; do
 		sudo -u "$name" git -C "$srcdir" clone "https://github.com/x1nigo/$i.git" >/dev/null 2>&1
-		cd "$srcdir"/"$i" && make clean install >/dev/null 2>&1
+		cd "$srcdir"/"$i" && sudo -u "$name" make clean install >/dev/null 2>&1
 	done
 	# Transfer ".local" and ".config" files to their respective locations.
 	cd "$srcdir"
-	shopt -s dotglob
-	sudo -u "$name" cp -rfT * /home/$name/
+	sudo -u "$name" cp -rfT dotfiles /home/$name/
 	chmod -R +x /home/$name/.local/bin
 	# Enable tap to click and natural scrolling.
 	[ ! -f /etc/X11/xorg.conf.d/40-libinput.conf ] && printf 'Section "InputClass"
