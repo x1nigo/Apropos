@@ -100,6 +100,7 @@ EndSection' >/etc/X11/xorg.conf.d/40-libinput.conf
 resetpermissions() {
 	rm -f /etc/sudoers.d/temp
 	echo "%wheel ALL=(ALL:ALL) ALL" > /etc/sudoers.d/00-wheel-sudo
+ 	sudo -u "$name" chsh -s /bin/zsh
 }
 
 exitmsg() {
