@@ -1,0 +1,28 @@
+xorg-server,This is the graphical user interface (display server)
+xorg-xinit,Start programs with this tool
+zathura,PDF viewer (minimalist)
+zathura-pdf-mupdf,This is what actually enables it
+nsxiv,A simple (x) image viewer
+mpv,Use this to watch your videos/movies
+xclip,Your system clipboard
+xdotool,Useful tool to automate keypresses
+xwallpaper,Make your desktop look nice
+xcompmgr,Enables transparency (picom alternative)
+libnotify,Enables notifications to appear
+dunst,A specific notification daemon for libnotify
+pipewire,Main program for sound and volume
+pipewire-pulse,Compatibility for pulse applications
+pipewire-alsa,Comapatibility for alsa applications
+pulsemixer,If you want to visualize the sound system
+wireplumber,Utility to adjust the volume
+sof-firmware,Sound firmware - enables the mic too
+bluez,Bluetooth application
+bluez-utils,Tools for bluetooth
+yt-dlp,To download videos (conveniently)
+noto-fonts,The main font of this configuration
+noto-fonts-emoji,It's an emoji font
+maim,If you want to take a screenshot
+polkit,Authentication tool for permissions
+fzf,Another tool for searching
+bc,A calculator
+fff,The fast fucking file manager
