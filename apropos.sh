@@ -71,7 +71,7 @@ installconfig() {
 	echo "Installing configuration files..."
 	sudo -u "$name" git -C "$srcdir" clone "$dotfilesrepo" >/dev/null 2>&1
 	# Install dwm and other suckless software.
-	for i in $(echo "dwm st dmenu dwmblocks"); do
+	for i in dwm st dmenu dwmblocks; do
 		sudo -u "$name" git -C "$srcdir" clone "https://github.com/x1nigo/$i.git" >/dev/null 2>&1
 		cd "$srcdir"/"$i" && make clean install >/dev/null 2>&1
 	done
