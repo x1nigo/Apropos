@@ -21,8 +21,8 @@ error() {
 }
 
 welcomemsg() {
-	whiptail --title "Welcome!" \
-		--msgbox "This script should be able to install my configuration files for Arch Linux.\\n\\n-CB2\\n\\nWARNING: This should be run as root - preferrably on a fresh install of Arch." 10 60
+	whiptail --title "Welcome\!" \
+		--msgbox "This script should be able to install my configuration files for Arch Linux.\\n-CB2\\n\\nWARNING: This should be run as root - preferrably on a fresh install of Arch." 12 60
 }
 
 getuserandpass() {
@@ -32,13 +32,17 @@ getuserandpass() {
 	read -r name
 	echo "Next, your password for this account."
 	printf "Password: "
-	read -r pass
+	read -r pass1
+	echo "Retype your password."
+	printf "Password: "
+	read -r pass2
+ 	[ "$pass1" != "$pass2" ] && error "Passwords do not match" && exit 1
 }
 
 adduserandpass() {
 	useradd -m -g wheel "$name"
-	echo "$name:$pass" | chpasswd
-	unset pass
+	echo "$name:$pass1" | chpasswd
+	unset pass1 pass2
 	srcdir="/home/$name/.local/src"
 	echo "%wheel ALL=(ALL:ALL) NOPASSWD:ALL" > /etc/sudoers.d/temp
 	sudo -u "$name" mkdir -p "$srcdir"
@@ -88,12 +92,13 @@ EndSection' >/etc/X11/xorg.conf.d/40-libinput.conf
 resetpermissions() {
 	rm -f /etc/sudoers.d/temp
 	echo "%wheel ALL=(ALL:ALL) ALL" > /etc/sudoers.d/00-wheel-sudo
+ 	usermod -a -G video "$name"
 	chsh -s /bin/zsh "$name"
 }
 
 exitmsg() {
-	whiptail --title "Installation Complete!" \
-		--msgbox "Congratulations! You now have a fully functioning Arch Linux desktop which you may now use as your daily driver.\\n\\nProvided that there were no hidden errors, you're good to go! And if there were, I'm sure you can figure it out.\\n\\n.t CB2" 13 80
+	whiptail --title "Installation Complete\!" \
+		--msgbox "Congratulations! You now have a fully functioning Arch Linux desktop which you may now use as your daily driver.\\n\\nProvided that there were no hidden errors, you're good to go! And if there were, I'm sure you can figure it out.\\n\\n-CB2" 13 80
 }
 
 ### EXECUTION PHASE ###
