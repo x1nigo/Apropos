@@ -21,16 +21,8 @@ error() {
 }
 
 welcomemsg() {
-	clear
-	echo "#####################################################################"
-	echo "Welcome! This script should be able to install my configuration files"
-	echo "for Arch Linux. - CB2"
-	echo " "
-	echo "WARNING: This should be run as root - preferrably on a fresh install."
-	echo "#####################################################################"
-	echo " "
-	echo "Press Enter/Return to continue."
-	read -r enter
+	whiptail --title "Welcome!" \
+		--msgbox "This script should be able to install my configuration files for Arch Linux.\\n\\n-CB2\\n\\nWARNING: This should be run as root - preferrably on a fresh install of Arch." 10 60
 }
 
 getuserandpass() {
@@ -75,13 +67,10 @@ installconfig() {
 		sudo -u "$name" git -C "$srcdir" clone "https://github.com/x1nigo/$i.git" >/dev/null 2>&1
 		cd "$srcdir"/"$i" && make clean install >/dev/null 2>&1
 	done
-	cd "$srcdir"
 	# Transfer ".local" and ".config" files to their respective locations.
+	cd "$srcdir"
 	shopt -s dotglob
-	sudo -u "$name" mv -f .local/* /home/$name/.local/
-	[ -d /home/$name/.config ] && {
-		sudo -u "$name" mv -f .config/* /home/$name/.config/
-	} || sudo -u "$name" mv -f .config /home/$name/
+	sudo -u "$name" cp -rfT * /home/$name/
 	chmod -R +x /home/$name/.local/bin
 	# Enable tap to click and natural scrolling.
 	[ ! -f /etc/X11/xorg.conf.d/40-libinput.conf ] && printf 'Section "InputClass"
@@ -100,27 +89,17 @@ EndSection' >/etc/X11/xorg.conf.d/40-libinput.conf
 resetpermissions() {
 	rm -f /etc/sudoers.d/temp
 	echo "%wheel ALL=(ALL:ALL) ALL" > /etc/sudoers.d/00-wheel-sudo
- 	sudo -u "$name" chsh -s /bin/zsh
+	sudo -u "$name" chsh -s /bin/zsh
 }
 
 exitmsg() {
-	clear
-	echo "#####################################################################"
-	echo "Done! You now have a fully functioning Arch Linux desktop which you"
-	echo "may now use as your daily driver."
-	echo " "
-	echo "Provided that there were no hidden errors, you're good to go! And"
-	echo "even if there were, I'm sure you'll find a way to make this work."
-	echo "- CB2"
-	echo "#####################################################################"
-	echo " "
-	echo "Press Enter/Return to reboot the system."
-	read -r enter
-	reboot
+	whiptail --title "Installation Complete!" \
+		--msgbox "Congratulations! You now have a fully functioning Arch Linux desktop which you may now use as your daily driver.\\n\\nProvided that there were no hidden errors, you're good to go! And if there were, I'm sure you can figure it out.\\n\\n.t CB2" 13 80
 }
 
 ### EXECUTION PHASE ###
 
+pacman --noconfirm --needed -Sy libnewt || error "Make sure you're running this Arch-based distribution as root with an internet connection."
 welcomemsg || error "User exited."
 getuserandpass || error "User exited."
 adduserandpass || error "User exited."
