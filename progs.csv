@@ -30,6 +30,12 @@ arandr,Tool for screen connecting (e.g. HDMI)
 bc,A calculator
 fff,The fast fucking file manager
 lf,File manager written in go (ranger replacement)
+ueberzugpp,Display image previews
+ffmpeg,A media converter
+ffmpegthumbnailer,Generates video file thumbnails
+ImageMagick,The best command-line tool for images
+poppler,Image previews for PDF files
+bat,Renders color highlights for text files
 lm_sensors,Gets the CPU temperature
 zsh,The Z Shell (more options than bash)
 zsh-syntax-highlighting,As its name suggests
