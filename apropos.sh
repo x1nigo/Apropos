@@ -36,7 +36,7 @@ getuserandpass() {
 	echo "Retype your password."
 	printf "Password: "
 	read -r pass2
- 	[ "$pass1" != "$pass2" ] && error "Passwords do not match."
+ 	[ "$pass1" = "$pass2" ] || error "Passwords do not match."
 }
 
 adduserandpass() {
@@ -111,7 +111,7 @@ exitmsg() {
 
 pacman --noconfirm --needed -Sy libnewt || error "Make sure you're running this Arch-based distribution as root with an internet connection."
 welcomemsg || error "User exited."
-getuserandpass || error "User exited."
+getuserandpass # Already has a custom error message.
 adduserandpass || error "User exited."
 installationloop || error "User exited."
 installconfig || error "User exited."
