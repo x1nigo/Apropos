@@ -24,6 +24,7 @@ noto-fonts,The main font of this configuration
 noto-fonts-emoji,It's an emoji font
 maim,If you want to take a screenshot
 polkit,Authentication tool for permissions
+openssh,For remote login and network services
 fzf,Another tool for searching
 bc,A calculator
 fff,The fast fucking file manager
