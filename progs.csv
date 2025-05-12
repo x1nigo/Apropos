@@ -26,8 +26,10 @@ maim,If you want to take a screenshot
 polkit,Authentication tool for permissions
 openssh,For remote login and network services
 fzf,Another tool for searching
+arandr,Tool for screen connecting (e.g. HDMI)
 bc,A calculator
 fff,The fast fucking file manager
+lf,File manager written in go (ranger replacement)
 lm_sensors,Gets the CPU temperature
 zsh,The Z Shell (more options than bash)
 zsh-syntax-highlighting,As its name suggests
