@@ -36,7 +36,7 @@ getuserandpass() {
 	echo "Retype your password."
 	printf "Password: "
 	read -r pass2
- 	[ "$pass1" != "$pass2" ] && error "Passwords do not match" && exit 1
+ 	[ "$pass1" != "$pass2" ] && error "Passwords do not match."
 }
 
 adduserandpass() {
@@ -67,11 +67,15 @@ installconfig() {
 	echo "Installing configuration files..."
 	sudo -u "$name" git -C "$srcdir" clone "$dotfilesrepo" >/dev/null 2>&1
 	# Install dwm and other suckless software.
+ 	clear
+  	echo "Compiling suckless software..."
 	for i in dwm st dmenu dwmblocks; do
 		sudo -u "$name" git -C "$srcdir" clone "https://github.com/x1nigo/$i.git" >/dev/null 2>&1
-		cd "$srcdir"/"$i" && sudo -u "$name" make clean install >/dev/null 2>&1
+		cd "$srcdir"/"$i" && make clean install >/dev/null 2>&1
 	done
 	# Transfer ".local" and ".config" files to their respective locations.
+ 	clear
+ 	echo "Adjusting miscellaneous settings..."
 	cd "$srcdir"
 	sudo -u "$name" cp -rfT dotfiles /home/$name/
 	chmod -R +x /home/$name/.local/bin
@@ -90,6 +94,8 @@ EndSection' >/etc/X11/xorg.conf.d/40-libinput.conf
 }
 
 resetpermissions() {
+	clear
+ 	echo "Changing permissions for the user..."
 	rm -f /etc/sudoers.d/temp
 	echo "%wheel ALL=(ALL:ALL) ALL" > /etc/sudoers.d/00-wheel-sudo
  	usermod -a -G video "$name"
