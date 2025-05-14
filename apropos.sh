@@ -79,6 +79,9 @@ installconfig() {
 	cd "$srcdir"
 	sudo -u "$name" cp -rfT dotfiles /home/$name/
 	chmod -R +x /home/$name/.local/bin
+ 	# Install the lf file manager.
+ 	clear "Configuring the \`lf\` file manager..."
+  	cd /home/$name/.config/lf && make install
 	# Enable tap to click and natural scrolling.
 	[ ! -f /etc/X11/xorg.conf.d/40-libinput.conf ] && printf 'Section "InputClass"
 		Identifier "libinput touchpad catchall"
