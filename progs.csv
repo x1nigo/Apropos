@@ -1,7 +1,7 @@
 xorg-server,This is the graphical user interface (display server)
 xorg-xinit,Start the graphical user interface
-zathura,PDF viewer (minimalist)
-zathura-pdf-mupdf,This is what actually enables it
+zathura,A general document viewer (minimalist)
+zathura-pdf-mupdf,Allows zathura to view PDF documents
 nsxiv,A simple (x) image viewer
 mpv,Use this to watch your videos/movies
 xclip,Your system clipboard
@@ -22,12 +22,16 @@ bluez-utils,Tools for bluetooth
 yt-dlp,To download videos (conveniently)
 noto-fonts,The main font of this configuration
 noto-fonts-emoji,It's an emoji font
+ncmpcpp,A terminal music client for mpd (use alongside mpd and mpc)
+mpd,This is a simple daemon for playing music (use with ncmpcpp and mpc)
+mpc,Command-line client for mpd (use with ncmpcpp and mpd)
 maim,If you want to take a screenshot
 polkit,Authentication tool for permissions
 openssh,For remote login and network services
 fzf,Another tool for searching
 arandr,Tool for screen connecting (e.g. HDMI)
-bc,A calculator
+bc,A calculator in your terminal
+transmission-cli,A terminal client used to download torrents
 fff,The fast fucking file manager
 lf,File manager written in go (ranger replacement)
 ueberzugpp,Display image previews
