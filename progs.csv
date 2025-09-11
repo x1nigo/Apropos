@@ -17,6 +17,7 @@ pipewire-alsa,Comapatibility for alsa applications
 pulsemixer,If you want to visualize the sound system
 wireplumber,Utility to adjust the volume
 sof-firmware,Sound firmware - enables the mic too
+alsa-utils, Advanced Linux Sound Architecture Utilities
 bluez,Bluetooth application
 bluez-utils,Tools for bluetooth
 yt-dlp,To download videos (conveniently)
