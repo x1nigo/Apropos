@@ -25,7 +25,7 @@ bluez-utils,Tools for bluetooth
 yt-dlp,To download videos (conveniently)
 noto-fonts,The main font of this configuration
 noto-fonts-emoji,It's an emoji font
-ttf-ubuntu-font-family,Ubuntu font family
+ttf-opensans,Sans-serif typeface commissioned by Google
 ttf-mononoki-nerd,You need this to display certain images in the statusbar
 qtile, A full-featured pure-Python tiling window manager
 ncmpcpp,A terminal music client for mpd (use alongside mpd and mpc)
