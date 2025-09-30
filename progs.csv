@@ -34,6 +34,7 @@ mpc,Command-line client for mpd (use with ncmpcpp and mpd)
 maim,If you want to take a screenshot
 polkit,Authentication tool for permissions
 openssh,For remote login and network services
+emacs,A GNU project Emacs editor
 fzf,Another tool for searching
 arandr,Tool for screen connecting (e.g. HDMI)
 bc,A calculator in your terminal
