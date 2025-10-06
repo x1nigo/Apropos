@@ -25,7 +25,7 @@ bluez-utils,Tools for bluetooth
 yt-dlp,To download videos (conveniently)
 noto-fonts,The main font of this configuration
 noto-fonts-emoji,It's an emoji font
-ttf-opensans,Sans-serif typeface commissioned by Google
+ttf-fira-sans,Sans-serif font from Mozilla
 ttf-mononoki-nerd,You need this to display certain images in the statusbar
 qtile, A full-featured pure-Python tiling window manager
 ncmpcpp,A terminal music client for mpd (use alongside mpd and mpc)
@@ -34,12 +34,10 @@ mpc,Command-line client for mpd (use with ncmpcpp and mpd)
 maim,If you want to take a screenshot
 polkit,Authentication tool for permissions
 openssh,For remote login and network services
-emacs,A GNU project Emacs editor
 fzf,Another tool for searching
 arandr,Tool for screen connecting (e.g. HDMI)
 bc,A calculator in your terminal
 transmission-cli,A terminal client used to download torrents
-fff,The fast fucking file manager
 lf,File manager written in go (ranger replacement)
 ueberzugpp,Display image previews
 ffmpeg,A media converter
