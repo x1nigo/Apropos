@@ -8,6 +8,7 @@ eza,An ls alternative for colors
 xclip,Your system clipboard
 xdotool,Useful tool to automate keypresses
 xwallpaper,Make your desktop look nice
+nitrogen,A GUI method of establishing wallpapers
 picom,Enables transparency
 firefox,The default browser
 libnotify,Enables notifications to appear
@@ -24,10 +25,9 @@ bluez,Bluetooth application
 bluez-utils,Tools for bluetooth
 yt-dlp,To download videos (conveniently)
 noto-fonts,The main font of this configuration
-noto-fonts-emoji,It's an emoji font
-ttf-fira-sans,Sans-serif font from Mozilla
 ttf-mononoki-nerd,You need this to display certain images in the statusbar
-qtile, A full-featured pure-Python tiling window manager
+xmonad,The hackable tiling window manager written in Haskell
+xmonad-contrib,Extensions for the xmonad tiling window manager
 ncmpcpp,A terminal music client for mpd (use alongside mpd and mpc)
 mpd,This is a simple daemon for playing music (use with ncmpcpp and mpc)
 mpc,Command-line client for mpd (use with ncmpcpp and mpd)
