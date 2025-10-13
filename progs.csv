@@ -25,6 +25,7 @@ bluez,Bluetooth application
 bluez-utils,Tools for bluetooth
 yt-dlp,To download videos (conveniently)
 noto-fonts,The main font of this configuration
+ttf-ubuntu-font-family,A pretty good font for the bar
 ttf-mononoki-nerd,You need this to display certain images in the statusbar
 xmonad,The hackable tiling window manager written in Haskell
 xmonad-contrib,Extensions for the xmonad tiling window manager
@@ -37,6 +38,7 @@ openssh,For remote login and network services
 fzf,Another tool for searching
 arandr,Tool for screen connecting (e.g. HDMI)
 bc,A calculator in your terminal
+lxappearance,Set a GTK theme for your system
 transmission-cli,A terminal client used to download torrents
 lf,File manager written in go (ranger replacement)
 ueberzugpp,Display image previews
