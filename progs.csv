@@ -26,7 +26,7 @@ bluez-utils,Tools for bluetooth
 yt-dlp,To download videos (conveniently)
 noto-fonts,The main font of this configuration
 ttf-ubuntu-font-family,A pretty good font for the bar
-ttf-mononoki-nerd,You need this to display certain images in the statusbar
+otf-hasklig-nerd,You need this to display certain images in the statusbar
 xmonad,The hackable tiling window manager written in Haskell
 xmonad-contrib,Extensions for the xmonad tiling window manager
 ncmpcpp,A terminal music client for mpd (use alongside mpd and mpc)
