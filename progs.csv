@@ -29,6 +29,7 @@ ttf-ubuntu-font-family,A pretty good font for the bar
 otf-hasklig-nerd,You need this to display certain images in the statusbar
 xmonad,The hackable tiling window manager written in Haskell
 xmonad-contrib,Extensions for the xmonad tiling window manager
+qtile,Window manager written in Python
 ncmpcpp,A terminal music client for mpd (use alongside mpd and mpc)
 mpd,This is a simple daemon for playing music (use with ncmpcpp and mpc)
 mpc,Command-line client for mpd (use with ncmpcpp and mpd)
