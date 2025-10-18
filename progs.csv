@@ -41,7 +41,10 @@ bc,A calculator in your terminal
 lxappearance,Set a GTK theme for your system
 transmission-cli,A terminal client used to download torrents
 lf,File manager written in go (ranger replacement)
+pcmanfm,A gui file manager
 ueberzugpp,Display image previews
+kdenlive,A video editor
+audacity,An audio editor
 ffmpeg,A media converter
 ffmpegthumbnailer,Generates video file thumbnails
 ImageMagick,The best command-line tool for images
