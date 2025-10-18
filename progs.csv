@@ -42,6 +42,7 @@ lxappearance,Set a GTK theme for your system
 transmission-cli,A terminal client used to download torrents
 lf,File manager written in go (ranger replacement)
 pcmanfm,A gui file manager
+gimp,The GNU image manipulation program
 ueberzugpp,Display image previews
 kdenlive,A video editor
 audacity,An audio editor
