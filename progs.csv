@@ -3,6 +3,8 @@ xorg-xinit,Start the graphical user interface
 zathura,A general document viewer (minimalist)
 zathura-pdf-mupdf,Allows zathura to view PDF documents
 nsxiv,A simple (x) image viewer
+xterm,The X terminal emulator
+alacritty,A pretty fast terminal emulator
 mpv,Use this to watch your videos/movies
 eza,An ls alternative for colors
 xclip,Your system clipboard
